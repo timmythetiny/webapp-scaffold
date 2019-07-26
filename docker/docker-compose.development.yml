@@ -1,6 +1,7 @@
 version: "3"
 
 services:
+
   frontend:
     image: frontend-dev
     build:
@@ -17,4 +18,16 @@ services:
       # Fix hot reloading
       - CHOKIDAR_USEPOLLING=true
     networks:
+      - webnet
+
+  backend:
+    image: backend-dev
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.backend-dev
+    expose:
+      - "8080"
+    volumes:
+      - "../backend:/app"
+    networks: 
       - webnet
