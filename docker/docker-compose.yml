@@ -1,0 +1,11 @@
+version: "3"
+
+# services:
+  # database:
+  #   image: postgres:latest
+
+  # reverseproxy:
+  #   image: nginx:latest
+
+networks:
+  webnet:
