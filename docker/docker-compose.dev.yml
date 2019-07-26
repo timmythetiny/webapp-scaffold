@@ -8,7 +8,7 @@ services:
       context: ..
       dockerfile: docker/Dockerfile.frontend-dev
     expose:
-      - "8080"
+      - "80"
     volumes:
       # Bind code
       - "../frontend:/app"
@@ -26,7 +26,7 @@ services:
       context: ..
       dockerfile: docker/Dockerfile.backend-dev
     expose:
-      - "8080"
+      - "80"
     volumes:
       - "../backend:/app"
     networks: 

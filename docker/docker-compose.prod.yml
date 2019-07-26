@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+  frontend:
+    image: frontend-prod
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.frontend-prod
+    expose:
+      - "80"
+    networks:
+      - webnet
+
+  backend:
+    image: backend-prod
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.backend-prod
+    expose: 
+      - "80"
+    networks:
+      - webnet
